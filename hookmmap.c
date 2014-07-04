@@ -48,7 +48,7 @@ asmlinkage long n_sys_munmap (unsigned long addr, size_t len)
     return ret;
 }
 
-void hookrw_init ( void )
+void hookmmap_init ( void )
 {
     DEBUG("Hooking sys_mmap2 and sys_munmap\n");
 
@@ -59,7 +59,7 @@ void hookrw_init ( void )
     hijack_start(sys_munmap, &n_sys_munmap);
 }
 
-void hookrw_exit ( void )
+void hookmmap_exit ( void )
 {
     DEBUG("Unhooking sys_mmap2 and sys_munmap\n");
 

