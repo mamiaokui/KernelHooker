@@ -12,6 +12,12 @@ ifdef LOGFILE
 endif
 endif
 
+ifdef HOOKMMAP
+	hooker-objs += hookmmap.o
+	MODULES += -D_CONFIG_HOOKMMAP_
+endif
+
+
 ifdef HOOKRW
 	hooker-objs += hookrw.o
 	MODULES += -D_CONFIG_HOOKRW_
